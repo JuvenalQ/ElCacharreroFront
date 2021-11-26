@@ -22,8 +22,14 @@ $("#login").click(function () {
       dataType: "json",
       success: function (response) {
         console.log(response);
-        alert("Bienvenido " + response.name);
-        window.location.href = "../html/page1.html";
+        if (response.name == "NO DEFINIDO") {
+
+          alert("No estas registrado o ingresaste un valor equivocado");
+        } else {
+          alert("Bienvenido " + response.name);
+          window.location.href = "../html/page1.html";
+        }
+
       }
     });
   }
